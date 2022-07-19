@@ -36,6 +36,7 @@ export function EditMovieForm({ movies }) {
 
   return (
     <div className="Add-movies-form">
+      
 
       <TextField onChange={(event) => setName(event.target.value)} label="Name" variant="outlined" value={name} />
       <TextField onChange={(event) => setPic(event.target.value)} label="Pic" variant="outlined" value={pic} />
@@ -43,6 +44,7 @@ export function EditMovieForm({ movies }) {
       <TextField onChange={(event) => setSummary(event.target.value)} label="Summary" variant="outlined" value={summary} />
       <TextField onChange={(event) => setTrailer(event.target.value)} label="Trailer" variant="outlined" value={trailer} />
       <Button onClick={editMovies} variant="contained">Save</Button>
+      
 
     </div>
   );
