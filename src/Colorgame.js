@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Colorbox } from "./Colorbox";
 
+
 export function Colorgame() {
   const [color, setColor] = useState("green");
   const [colorList, setColorList] = useState(["orange", "grey", "green"]);
@@ -11,7 +12,7 @@ export function Colorgame() {
     
   };
   return (
-    <div>
+    <div className="color-container">
       <div className="addcolor">
         <input
           onChange={(event) => setColor(event.target.value)}
@@ -23,6 +24,7 @@ export function Colorgame() {
         <button onClick={() => setColorList([...colorList, color])}>Addcolor</button>
       </div>
       {colorList.map((clr) => <Colorbox color={clr} />)}
+      
 
     </div>
   );

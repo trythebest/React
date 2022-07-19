@@ -3,22 +3,22 @@
   
 }
 
-
-
 .movie-container{
   width:400px;
+  height: min-content;
 }
 .movieposter{
   width:400px;
   height:600px;
   object-fit: cover;
-  border-radius: 15px;
+  
 }
 .moviespecs{
   display:flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
+  
   
 }
 .moviesummary{
@@ -42,4 +42,15 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+}
+.info-page{
+  margin: 10px;
+  
+}
+.details{
+  display: flex;
+  align-items: center;
+}
+.router-place{
+  padding:25px 5px ;
 }
