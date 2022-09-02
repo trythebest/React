@@ -69,7 +69,7 @@ export default function App() {
   );
 }
 function Home() {
-  return <h2>"welcome to the movie app 😎😍🤞"</h2>
+  return <h2>"welcome to the movie app 😎😍🤞😉"</h2>
 }
 export function Msg({ movie, id, deletebutton, editbutton }) {
   const [show, setShow] = useState(true)
