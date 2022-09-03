@@ -10,7 +10,7 @@ import { API } from "./global";
 export function MovieList() {
   const [movieList, setMovieList] = useState([]);
 
-  const getMovies=()=>{
+  const getMovies = () => {
     fetch(`${API}/movies`)
       .then((data) => data.json())
       .then((movies) => setMovieList(movies));
@@ -18,24 +18,42 @@ export function MovieList() {
 
   useEffect(() => {
     getMovies();
-  },[]);
-  const deleteMovie = (id)=>{
+  }, []);
+  const deleteMovie = (id) => {
 
-    console.log("delete movie:",id)
+    console.log("delete movie:", id)
 
-    fetch(`${API}/movies/${id}`, {method:"DELETE"} )
+    fetch(`${API}/movies/${id}`, { method: "DELETE" })
       .then(() => getMovies());
 
-    
+
   }
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   return (
 
 
     <div className="movie-list">
-      {movieList.map((mov) => (<Msg key={mov.id} movie={mov} id={mov._id} deletebutton={<IconButton onClick={()=>deleteMovie(mov.id)} style={{marginLeft:"auto"}}aria-label="delete" color="error"><DeleteIcon /></IconButton>} editbutton={<IconButton onClick={()=>navigate(`/movies/edit/${mov.id}`)} color="secondary"><EditIcon/></IconButton>}/>))}
+      {movieList.map((mov) => (
+        <Msg
+          key={mov._id}
+          movie={mov}
+          id={mov._id}
+          deletebutton={
+            <IconButton
+              onClick={() => deleteMovie(mov._id)}
+              style={{ marginLeft: "auto" }}
+              aria-label="delete"
+              color="error">
+              <DeleteIcon />
+            </IconButton>}
+          editbutton={
+            <IconButton
+              onClick={() => navigate(`/movies/edit/${mov._id}`)}
+              color="secondary"><EditIcon /></IconButton>} />))
+
+      }
     </div>
 
   );
-  
+
 }
