@@ -33,7 +33,7 @@ export function MovieList() {
 
 
     <div className="movie-list">
-      {movieList.map((mov) => (<Msg key={mov.id} movie={mov} id={mov.id} deletebutton={<IconButton onClick={()=>deleteMovie(mov.id)} style={{marginLeft:"auto"}}aria-label="delete" color="error"><DeleteIcon /></IconButton>} editbutton={<IconButton onClick={()=>navigate(`/movies/edit/${mov.id}`)} color="secondary"><EditIcon/></IconButton>}/>))}
+      {movieList.map((mov) => (<Msg key={mov.id} movie={mov} id={mov._id} deletebutton={<IconButton onClick={()=>deleteMovie(mov.id)} style={{marginLeft:"auto"}}aria-label="delete" color="error"><DeleteIcon /></IconButton>} editbutton={<IconButton onClick={()=>navigate(`/movies/edit/${mov.id}`)} color="secondary"><EditIcon/></IconButton>}/>))}
     </div>
 
   );
