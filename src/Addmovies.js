@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import {  useFormik } from 'formik';
 import * as yup from 'yup';
+import { API } from './global';
 
 
 const formValidationSchema=yup.object({
@@ -41,7 +42,7 @@ export function AddMovies(){
   const addMovie= (newMovie) => {   
     console.log(newMovie);
       // setMovieList([...movieList, newMovie])
-      fetch("https://624e6fb677abd9e37c86ff94.mockapi.io/movies" ,
+      fetch(`${API}/movies` ,
       {
         method:"POST",
         body:JSON.stringify(newMovie),

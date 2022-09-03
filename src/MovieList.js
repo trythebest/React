@@ -5,12 +5,13 @@ import { Msg } from "./App";
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { IconButton } from "@mui/material";
+import { API } from "./global";
 
 export function MovieList() {
   const [movieList, setMovieList] = useState([]);
 
   const getMovies=()=>{
-    fetch("https://624e6fb677abd9e37c86ff94.mockapi.io/movies")
+    fetch(`${API}/movies`)
       .then((data) => data.json())
       .then((movies) => setMovieList(movies));
   }
@@ -22,7 +23,7 @@ export function MovieList() {
 
     console.log("delete movie:",id)
 
-    fetch(`https://624e6fb677abd9e37c86ff94.mockapi.io/movies/${id}`, {method:"DELETE"} )
+    fetch(`${API}/movies/${id}`, {method:"DELETE"} )
       .then(() => getMovies());
 
     

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
+import { API } from "./global";
 
 export function EditMovieForm({ movies }) {
 
@@ -22,7 +23,7 @@ export function EditMovieForm({ movies }) {
     };
     console.log(EditMovie);
 
-    fetch(`https://624e6fb677abd9e37c86ff94.mockapi.io/movies/${movies.id}`,
+    fetch(`${API}/movies/${movies.id}`,
       {
         method: "PUT",
         body: JSON.stringify(EditMovie),
